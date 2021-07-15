@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
-import contactsActions from "../../redux/contacts/contacts-actions";
+import contactsOperations from '../../redux/contacts/contacts-operations'
+// import contactsActions from "../../redux/contacts/contacts-actions";
 import "./contacts-list.css";
 
 const ContactsList = ({ filteredContacts, onDeleteContact }) => (
@@ -21,6 +22,7 @@ const ContactsList = ({ filteredContacts, onDeleteContact }) => (
 );
 
 const getFilteredContacts = (allContacts, filter) => {
+  
   // const { filter, contacts } = this.state;
 
   const normalizedFilter = filter.toLowerCase();
@@ -35,16 +37,7 @@ const mapStateToProps = ({ contacts: { items, filter } }) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  onDeleteContact: (id) => dispatch(contactsActions.deleteContact(id)),
+  onDeleteContact: (id) => dispatch(contactsOperations.deleteContact(id)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ContactsList);
-
-// const mapStateToProps = state => {
-//   const { filter, contacts } = state.phonebook;
-//   // const normalizedFilter = filter.toLowerCase();
-
-//   const filteredContacts = getFilteredContacts(contacts, filter) // getFilteredContacts=contacts.filter((contact) => contact.name.toLowerCase().includes(normalizedFilter));
-
-//  return {filteredContacts: filteredContacts}
-// }

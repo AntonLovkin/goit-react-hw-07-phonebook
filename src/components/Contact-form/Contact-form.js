@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import contactsActions from "../../redux/contacts/contacts-actions";
+import contactsOperations from "../../redux/contacts/contacts-operations";
 import "../base.css";
 import "../Contact-form/contact-form.css";
 
@@ -9,6 +9,10 @@ class ContactForm extends Component {
     name: "",
     number: "",
   };
+
+  componentDidMount() {
+    this.props.fetchContacts()
+  }
 
   handleChange = ({ target }) => {
     const { name, value } = target;
@@ -75,7 +79,8 @@ class ContactForm extends Component {
 
 const mapDispatchToProps = (dispatch) => ({
   onSubmit: (name, number) =>
-    dispatch(contactsActions.addContact(name, number)),
+    dispatch(contactsOperations.addContact(name, number)),
+  fetchContacts: () => dispatch(contactsOperations.fetchContacts())
 });
 
 export default connect(null, mapDispatchToProps)(ContactForm);
