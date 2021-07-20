@@ -16,7 +16,7 @@ const items = createReducer(([]), {
   [addContactSuccess]: (state, { payload }) => {
     if (state.map(({ name }) => name).includes(payload.name)) {
       alert(`${payload.name} is already in contacts`);
-      console.log(payload.name);
+      // console.log(payload.name);
       return 
     } 
       return [payload, ...state];

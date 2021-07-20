@@ -5,6 +5,7 @@ import contactsSelectors from "../../redux/contacts/contacts-selectors";
 import "./contacts-list.css";
 
 const ContactsList = ({ filteredContacts, onDeleteContact }) => (
+  console.log('re-render') || 
   <ul className="contact-list">
     {filteredContacts.map(({ name, number, id }) => (
       <li key={id} className="contact-item">

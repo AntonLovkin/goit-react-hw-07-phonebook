@@ -1,19 +1,9 @@
 {
   "contacts": [
     {
-      "name": "Ekaterina",
-      "number": "5451651",
-      "id": 5
-    },
-    {
       "name": "Brezhneva",
-      "number": "1234556",
-      "id": 6
-    },
-    {
-      "name": "AntonAnton",
-      "number": "1234556",
-      "id": 7
+      "number": "5451651",
+      "id": 9
     }
   ]
 }
